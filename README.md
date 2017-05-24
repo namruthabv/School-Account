@@ -7,6 +7,7 @@ compare field validation) and login page have redirections for:
 
 
 1. For Parents:
+
   a. Creating Account - With email confirmation and prompting already existing Users to Login Page(Implemented with AutoPushBack feature).
   
   b. Login :
