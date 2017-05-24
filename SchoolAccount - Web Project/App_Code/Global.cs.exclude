@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for Global
+/// </summary>
+
+public class Global : System.Web.HttpApplication
+{
+    public Global() 
+    {
+    } 
+    protected void Application_Start(object sender, EventArgs e)
+    {
+        List<UserInfor> allUsersList = Application["AllUsersList"] as List<UserInfor>;
+        DataSet ds = new DataSet();
+        DataTable dt = new DataTable();
+        SqlDataAdapter sa = new SqlDataAdapter();
+
+        //SqlConnection conn = new SqlConnection("Data Source=dcm.uhcl.edu;Initial Catalog=c432017sp01bogimanevijayakn;User id=bogimanevijayakn;password=1546184;Integrated Security=False");
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["wad_db"].ConnectionString);
+        string stat = "SELECT * from BogimanevkN_WADsp17_UserInfor";
+        SqlCommand sqlCommand = new SqlCommand(stat, conn);
+        try
+        {
+            //UserInfor us1 = new UserInfor();
+            conn.Open();
+            SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                UserInfor us1 = new UserInfor();
+                us1.EmailAddress = ((string)sqlReader["emailAddress"]);
+                us1.Password = ((string)sqlReader["password"]);
+                us1.FirstName = ((string)sqlReader["firstName"]);
+                us1.LastName = ((string)sqlReader["lastName"]);
+                us1.SecurityQuestion = ((string)sqlReader["SecurityQuestion"]);
+                us1.SecurityQuestionAnswer = ((string)sqlReader["securityQuestionAnswer"]);
+                us1.stateOrProvince = ((string)sqlReader["stateOrProvince"]);
+                us1.schoolDistrictName = ((string)sqlReader["schoolDistrictName"]);
+                allUsersList.Add(us1);
+            } 
+            //sqlCommand.CommandType = CommandType.Text;
+            //sa.SelectCommand = sqlCommand;
+            //sa.Fill(ds);
+            //dt = ds.Tables[0];
+            //if (dt != null && dt.Rows.Count > 0)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        UserInfor data = new UserInfor
+            //        {
+            //            emailAddress = Convert.ToString(dr["emailAddress"]),
+            //            password = Convert.ToString(dr["password"]),
+            //            firstName = Convert.ToString(dr["firstName"]),
+            //            lastName = Convert.ToString(dr["lastName"]),
+            //            SecurityQuestion = Convert.ToString(dr["SecurityQuestion"]),
+            //            securityQuestionAnswer = Convert.ToString(dr["securityQuestionAnswer"]),
+            //            stateOrProvince = Convert.ToString(dr["stateOrProvince"]),
+            //            schoolDistrictName = Convert.ToString(dr["schoolDistrictName"]),
+            //        };
+            //        Response.Write(data);
+            //        allUsersList.Add(data);
+            //    }
+            //}
+
+            /* SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+         while (sqlReader.Read())
+         {
+             UserInfor us1 = new UserInfor();
+             us1.EmailAddress = ((string)sqlReader["emailAddress"]);
+             us1.Password = ((string)sqlReader["password"]);
+             us1.FirstName = ((string)sqlReader["firstName"]);
+             us1.LastName = ((string)sqlReader["lastName"]);
+             us1.SecurityQuestion = ((string)sqlReader["SecurityQuestion"]);
+             us1.SecurityQuestionAnswer = ((string)sqlReader["securityQuestionAnswer"]);
+             us1.stateOrProvince = ((string)sqlReader["stateOrProvince"]);
+             us1.schoolDistrictName = ((string)sqlReader["schoolDistrictName"]);
+         } */
+        }
+        catch (Exception ex) {
+           // HttpContext.Current.Response.Write(ex);
+        }
+        finally
+        {
+            conn.Close();
+        }
+
+    }
+}

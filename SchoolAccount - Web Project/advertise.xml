@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/images/im1.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img1</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im2.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img1</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im5.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img1</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im6.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img2</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im8.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img2</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im1.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img2</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im2.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img3</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im5.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img3</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/im8.png</ImageUrl>
+    <NavigateUrl></NavigateUrl>
+    <AlternateText>Student loan</AlternateText>
+    <Keyword>img3</Keyword>
+    <Width>33%</Width>
+    <Height>80</Height>
+  </Ad>
+</Advertisements>
